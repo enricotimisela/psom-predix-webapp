@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../../bower_components/components-font-awesome/css/font-awesome.min.css">
 <!-- import polymer -->
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
@@ -45,7 +46,8 @@
           <px-app-nav
             class="navbar"
             items="{{navItems}}"
-            selected-route="{{navRoute}}">
+            selected-route="{{navRoute}}"
+            vertical>
           </px-app-nav>
         </div>
         <div class="u-1/1-palm">
@@ -78,7 +80,7 @@
           value: function() {
             return {
               version: '1.0',
-              name: 'Predix Web App Starter - RMD Reference App'
+              name: 'O&M Portal App'
             }
           }
         },
@@ -89,7 +91,7 @@
           type: Array,
           value: function() {
             return [
-              {
+              /*{
                 "label": "Asset Monitoring",
                 "id": "rmd",
                 "icon": "px-fea:analytics"
@@ -98,7 +100,58 @@
                 "label": "About",
                 "id": "about",
                 "icon": "px-com:message"
-              }
+              },*/
+              {
+                "label": "About O&M",
+                "icon":"px-com:message",
+                "children":[
+                  {
+                   "label": "Contacts",
+                  },
+                  {
+                    "label": "Presenting O&M",
+                  },
+                  {
+                    "label": "Info",
+                  }]
+              },
+              {
+                "label": "RAM Dashboard",
+                "icon": "maps:directions-bus"
+              },
+              {
+                "label": "Power Plants",
+              },
+              {
+                "label": "Library",
+              },
+              {
+                "label": "Useful Link",
+              },
+              {
+                "label": "OMIL",
+              },
+              {
+                "label": "Event Report",
+              },
+              {
+                "label": "Station Target",
+              },
+              {
+                "label": "Global Spare Parts",
+              },
+              {
+                "label": "PdM",
+              },
+              {
+                "label": "RA&CP",
+              },
+              {
+                "label": "Under Construction",
+              },
+              {
+                "label": "Settings",
+              },
               //Uncomment this block to show the Simple Asset navigation item on the menu.
               /* // asset-nav-item
               ,{
@@ -124,7 +177,7 @@
         // console.log('ready. route: ', this.$.starterAppRoute.navRoute);
         this.$.configAjaxEl.addEventListener('response', function(evt) {
           // We're getting some global config from the server.
-          // console.log('config', evt.detail.response);
+           console.log('config', evt.detail.response);
           this.appHeader = evt.detail.response.appHeader;
           this.$.view.elementData = evt.detail.response;
         }.bind(this));

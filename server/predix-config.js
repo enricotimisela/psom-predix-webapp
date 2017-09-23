@@ -26,6 +26,7 @@ if(node_env === 'development') {
 	settings.websocketServerURL = devConfig.websocketServerURL;
 	settings.rmdDatasourceURL = devConfig.rmdDatasourceURL;
 	settings.rmdDocsURL = devConfig.rmdDocsURL;
+	settings.navItemURL = devConfig.serverBackendURL + "navitem";
 
 } else {
 	// read VCAP_SERVICES
@@ -56,6 +57,7 @@ if(node_env === 'development') {
 	settings.websocketServerURL = process.env.websocketServerURL;
 	settings.rmdDatasourceURL = process.env.rmdDatasourceURL;
 	settings.rmdDocsURL = process.env.rmdDocsURL;
+	settings.navItemURL = process.env.serverBackendURL + "navitem";
 }
 // console.log('config settings: ' + JSON.stringify(settings));
 
