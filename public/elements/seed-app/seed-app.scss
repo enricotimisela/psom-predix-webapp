@@ -47,9 +47,13 @@ header > div.viewport {
   margin: 0 15px;
 }
 
+px-branding-bar{
+  margin-left: calculateRem(60px);
+}
+
 main {
   min-height: calc(100vh - #{calculateRem(120px)});
-  // margin-left: calculateRem(60px);
+  margin-left: calculateRem(60px);
   background-color: var(--px-seed-app-main-content-area-background-color, $px-page-main-content-area-background-color);
   overflow-x: hidden;
   flex: 1;
