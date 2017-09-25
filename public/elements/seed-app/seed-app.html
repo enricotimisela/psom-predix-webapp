@@ -19,6 +19,7 @@
 <!-- importing icons here, to fix icon flickering problem when loading asynchronously. -->
 <link rel="import" href="../../bower_components/px-icon-set/px-icon.html">
 <link rel="import" href="../../bower_components/px-icon-set/px-icon-set.html">
+<link rel="import" href="../icons/a_loadicon.html">
 
 <dom-module id="seed-app">
   <template>
@@ -27,6 +28,7 @@
     <style include="seed-app-styles"></style>
 
     <px-branding-bar application-title="[[appHeader]]"></px-branding-bar>
+
     <div class="viewport">
       <app-location
         route="{{route}}"
@@ -90,7 +92,7 @@
           type: Array,
           value: function() {
             return [
-              {
+              /*{
                 "label": "Asset Monitoring",
                 "id": "rmd",
                 "icon": "px-fea:analytics"
@@ -99,10 +101,10 @@
                 "label": "About",
                 "id": "about",
                 "icon": "px-com:message"
-              },
+              },*/
               {
                 "label": "About O&M",
-                "icon":"px-com:message",
+                "icon":"icons:info-outline",
                 "children":[
                   {
                    "label": "Contacts",
@@ -116,42 +118,55 @@
               },
               {
                 "label": "RAM Dashboard",
-                "id": "2",
-                "icon": "menu"
+                "realid": "2",
+                "id": "dashboard",
+                "icon": "px-fea:dashboard"
               },
               {
                 "label": "Power Plants",
+                "icon": "social:public"
               },
               {
                 "label": "Library",
+                "icon": "av:library-books"
               },
               {
                 "label": "Useful Link",
+                "icon":"icons:link",
               },
               {
                 "label": "OMIL",
+                "icon":"communication:mail-outline",
               },
               {
                 "label": "Event Report",
+                "icon":"px-fea:log",
               },
               {
                 "label": "Station Target",
+                "icon":"icons:track-changes",
               },
               {
                 "label": "Global Spare Parts",
+                "icon": "px-fea:tag-group"
               },
               {
                 "label": "PdM",
+                "icon": "px-obj:machine"
               },
               {
                 "label": "RA&CP",
+                "icon": "icons:change-history",
               },
               {
                 "label": "Under Construction",
+                "icon": "px-fea:dev-ops",
               },
               {
                 "label": "Settings",
-              },
+                "icon": "px-fea:administration"
+              }
+
               //Uncomment this block to show the Simple Asset navigation item on the menu.
               /* // asset-nav-item
               ,{
@@ -186,7 +201,7 @@
       getHref: function(navRoute) {
         console.log(navRoute);
         var navRoute = this.$.starterAppRoute.navRoute || ['rmd'];
-        return '/elements/views/' + navRoute[0] + '-view.html';
+        return '/elements/views/' + navRoute[0] + '/'+ navRoute[0] +'-view.html';
       }
 
     });
