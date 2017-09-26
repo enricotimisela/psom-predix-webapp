@@ -1,0 +1,50 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/px-card/px-card.html">
+
+<link rel="import" href="/elements/views/gss/gssmain.html" class="pusing">
+<dom-module id="gss-view">
+    <template>
+        <px-card>
+            <babipanggang id="babiguling"></babipanggang>
+        </px-card>
+    </template>
+    <script>
+        Polymer({
+            is: 'gss-view',
+            ready: function() {
+                var link = document.querySelectorAll('link[rel="import"]');
+                console.log(link);
+                var content = link[3].import;
+                console.log(content);
+                var contentlinks = content.querySelectorAll('link[rel="import"]');
+                console.log(contentlinks);
+                var contentlink = contentlinks[2].import;
+                console.log(contentlink);
+                // Grab DOM from warning.html's document.
+                var el = contentlink.querySelector(".psomtemplate");
+                console.log(el);
+
+                var x = this.$.babiguling;
+                console.log(x);
+                x.appendChild(el.cloneNode(true));
+            }
+
+        });
+
+        /*var link = document.querySelectorAll('link[rel="import"]');
+        console.log(link);
+        var content = link[3].import;
+        console.log(content);
+        var contentlinks = content.querySelectorAll('link[rel="import"]');
+        var contentlink = contentlinks[0].import;
+        console.log(contentlink);
+        // Grab DOM from warning.html's document.
+        var el = contentlink.querySelector(".warning");
+        console.log(el);
+
+        var x = this.$.babipanggang;
+        console.log(x);
+        x.appendChild(el.cloneNode(true));*/
+
+    </script>
+</dom-module>

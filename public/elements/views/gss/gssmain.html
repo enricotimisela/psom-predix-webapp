@@ -1,0 +1,202 @@
+<psomtemplate class="psomtemplate">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <div ng-app="">
+        <p>Name : <input type="text" ng-model="name"></p>
+        <h1>Hello {{name}}</h1>
+    </div>
+
+    <div class="warning">
+        <style>
+            h3 {
+                color: red !important;
+            }
+        </style>
+        <h3>Warning!</h3>
+        <p>This page is under construction</p>
+    </div>
+
+    <div class="outdated">
+        <h3>Heads up!</h3>
+        <p>This content may be out of date</p>
+    </div>
+    <p>test</p>
+    <div>
+        <input class="search-input form-control">
+    </div>
+    <div id="jstree_demo"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.4/jstree.min.js"></script>
+    <script>
+        $(function() {
+
+            $(".search-input").keyup(function() {
+
+                var searchString = $(this).val();
+                console.log(searchString);
+                $('#jstree_demo').jstree('search', searchString);
+            });
+
+
+            $('#jstree_demo').jstree({
+                'core': {
+
+                    'data': [{
+                        "id": "1.0",
+                        "text": "Fresh Products",
+                        "icon": "",
+                        "state": {
+                            "opened": false,
+                            "disabled": false,
+                            "selected": false
+                        },
+                        "children": [{
+                            "id": "2.06.0",
+                            "text": "Ethnic & Specialty",
+                            "icon": "",
+                            "state": {
+                                "opened": false,
+                                "disabled": false,
+                                "selected": false
+                            },
+                            "children": false,
+                            "liAttributes": null,
+                            "aAttributes": null
+                        }, {
+                            "id": "2.07.0",
+                            "text": "Natural & Organic",
+                            "icon": "",
+                            "state": {
+                                "opened": false,
+                                "disabled": false,
+                                "selected": false
+                            },
+                            "children": false,
+                            "liAttributes": null,
+                            "aAttributes": null
+                        }, {
+                            "id": "2.08.0",
+                            "text": "Prepared Foods",
+                            "icon": "",
+                            "state": {
+                                "opened": false,
+                                "disabled": false,
+                                "selected": false
+                            },
+                            "children": false,
+                            "liAttributes": null,
+                            "aAttributes": null
+                        }, {
+                            "id": "2.09.0",
+                            "text": "Seafood",
+                            "icon": "",
+                            "state": {
+                                "opened": false,
+                                "disabled": false,
+                                "selected": false
+                            },
+                            "children": false,
+                            "liAttributes": null,
+                            "aAttributes": null
+                        }, {
+                            "id": "2.010.0",
+                            "text": "Seafood",
+                            "icon": "",
+                            "state": {
+                                "opened": false,
+                                "disabled": false,
+                                "selected": false
+                            },
+                            "children": false,
+                            "liAttributes": null,
+                            "aAttributes": null
+                        }],
+                        "liAttributes": null,
+                        "aAttributes": null
+                    }, {
+                        "id": "2.0",
+                        "text": "Frozen Products",
+                        "icon": "",
+                        "state": {
+                            "opened": false,
+                            "disabled": false,
+                            "selected": false
+                        },
+                        "children": [],
+                        "liAttributes": null,
+                        "aAttributes": null
+                    }, {
+                        "id": "3.0",
+                        "text": "Store Equipment ",
+                        "icon": "",
+                        "state": {
+                            "opened": false,
+                            "disabled": false,
+                            "selected": false
+                        },
+                        "children": [],
+                        "liAttributes": null,
+                        "aAttributes": null
+                    }, {
+                        "id": "4.0",
+                        "text": "Packaged Grocery",
+                        "icon": "",
+                        "state": {
+                            "opened": false,
+                            "disabled": false,
+                            "selected": false
+                        },
+                        "children": [],
+                        "liAttributes": null,
+                        "aAttributes": null
+                    }, {
+                        "id": "5.0",
+                        "text": "Retail Technology",
+                        "icon": "",
+                        "state": {
+                            "opened": false,
+                            "disabled": false,
+                            "selected": false
+                        },
+                        "children": [],
+                        "liAttributes": null,
+                        "aAttributes": null
+                    }, {
+                        "id": "6.0",
+                        "text": "HBC/Non-Foods",
+                        "icon": "",
+                        "state": {
+                            "opened": false,
+                            "disabled": false,
+                            "selected": false
+                        },
+                        "children": [],
+                        "liAttributes": null,
+                        "aAttributes": null
+                    }]
+
+
+
+                },
+                "search": {
+
+                    "case_insensitive": true,
+                    "show_only_matches" : true
+
+
+                },
+
+                "plugins": ["search"]
+
+
+            });
+        });
+
+
+
+    </script>
+</psomtemplate>
+
+
+
+
+
